@@ -1,1 +1,40 @@
-<router-outlet></router-outlet>
+<mat-drawer-container class="sidenav">
+
+	<mat-drawer #drawer class="side" mode="side" opened>
+		<app-routes-list (selectedRoute)="displayRoute($event)"></app-routes-list>
+
+	</mat-drawer>
+
+	<mat-drawer-content class="content">
+	<button class="sidebar-toggle-button" mat-flat-button (click)="drawer.toggle();toggleSidebarState()">
+		<mat-icon *ngIf="sidebarHidden">chevron_right</mat-icon>
+		<mat-icon *ngIf="!sidebarHidden">chevron_left</mat-icon>
+	</button>
+		<!-- Map -->
+		<google-map height="50%"
+			width="100%"
+			[zoom]="zoom"
+			[center]="center"
+			[options]="options">
+
+			<map-polyline
+			*ngFor="let routeLine of routeLines"
+			[path]="routeLine"
+			[options]="polylineOptions"
+			></map-polyline>
+
+			<map-marker
+			*ngFor="let stopMarker of stopMarkers"
+			[position]="stopMarker.position"
+			[title]="stopMarker.name"
+			[options]="stopMarker"
+			(mapClick)="onMarkerClick(stopMarker)"
+		  ></map-marker>
+		</google-map>
+		<mat-divider></mat-divider>	
+		<!-- Statistics -->
+		<app-statistics-view *ngIf="selectedStop != undefined" [stopSubject]="selectedStop"></app-statistics-view>
+
+	</mat-drawer-content>
+
+</mat-drawer-container>

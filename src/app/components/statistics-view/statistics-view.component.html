@@ -1,0 +1,28 @@
+<div fxLayout="row">
+	<h3 fxLayoutAlign="center" fxFlex="100%" *ngIf="selectedStop != undefined">{{ selectedStop.name }}</h3>
+</div>
+<div fxLayout="row">
+	<div fxFlex="30%">
+		<table *ngIf="transportArrivalSource != undefined" mat-table [dataSource]="transportArrivalSource" matSort class="mat-elevation-z8">
+		  
+			<ng-container matColumnDef="transportId">
+			  <th mat-header-cell *matHeaderCellDef mat-sort-header> Transport ID </th>
+			  <td mat-cell *matCellDef="let element"> {{element.transportId}} </td>
+			</ng-container>
+		  
+			<ng-container matColumnDef="timestamp">
+			  <th mat-header-cell *matHeaderCellDef mat-sort-header> Timpul de sosire </th>
+			  <td mat-cell *matCellDef="let element"> {{element.timestamp}} </td>
+			</ng-container>
+		  
+			<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+			<tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+		  </table>
+	</div>
+	<div fxFlex="35%">
+		<google-map></google-map>
+	</div>
+	<div fxFlex="35%">
+		<google-map></google-map>
+	</div>
+</div>

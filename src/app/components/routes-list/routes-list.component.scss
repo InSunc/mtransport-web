@@ -1,0 +1,65 @@
+.root {
+	width: 100%;
+}
+
+$default-padding: 10px;
+.mat-form-field {
+	padding-top: $default-padding + 10px;
+}
+
+
+h2 {
+	color: #3F403F;
+}
+
+table {
+	width: 100%;
+	box-shadow: none;
+	background-color: transparent;
+}
+
+.header-cell-text {
+	padding-left: $default-padding;
+}
+
+th.mat-header-cell:last-of-type, td.mat-cell:last-of-type, td.mat-footer-cell:last-of-type {
+	padding-right: 0;
+}
+
+th.mat-header-cell:first-of-type, td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type {
+	padding-left: 0;
+}
+
+$button-icon-padding: 20px;
+.route-id {
+	text-transform: uppercase;
+	font-weight: bold;
+	color: #041F1E;
+}
+
+.route-name {
+	font-weight: normal;
+	color: #3F403F;
+}
+
+button {
+	text-align: left;
+	width: 100%;
+	line-height: 20px !important;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.button-icon {
+	align-self: center;
+	margin-right: $button-icon-padding;
+	color: #041F1E;
+}
+
+.button-title {
+	align-self: center;
+}
+
+.visible-icon {
+	padding-left: 10px;
+}

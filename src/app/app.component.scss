@@ -1,0 +1,25 @@
+.sidenav {
+	height: 100%;
+	width: 100%;
+}
+
+.side {
+	height: 100%;
+	background-color: #F8F7F9;
+}
+
+.content {
+	background-color: #F8F7F9;
+}
+
+mat-toolbar {
+	box-shadow: 0px 3px 24px -4px rgba(0,0,0,0.67);;
+	background-color: #DCDCDD;
+}
+
+.sidebar-toggle-button {
+	position: fixed;
+	top: 0;
+	z-index: 9999999999;
+	margin-top: 13px;
+}
